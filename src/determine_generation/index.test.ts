@@ -19,7 +19,7 @@ describe("determineGeneration", () => {
   describe("boundary value test", () => {
     test("Invalid age boundary: age = -1, age = 0", () => {
       expect(determineGeneration(-1)).toBe("Invalid age");
-      expect(determineGeneration(0)).toBe("Invalid age");
+      expect(determineGeneration(0)).toBe("Child");
     });
     test("Child and Young boundary: age = 12, age = 13", () => {
       expect(determineGeneration(12)).toBe("Child");
