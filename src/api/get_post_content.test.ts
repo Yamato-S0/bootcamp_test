@@ -18,6 +18,13 @@ describe("getPostContent", () => {
     jest.clearAllMocks();
   });
 
+  test("returns post content on fetchPost success", async () => {
+    const ret = await getPostContent(1);
+    expect(ret).toBe("Mock Post Content");
+    expect(fetchPost).toHaveBeenCalledWith(1);
+    expect(fetchPost).toBeCalledTimes(1);
+  });
+
   test("returns null on fetchPost failure", async () => {
     const ret = await getPostContent(-1);
     expect(ret).toBeNull();
